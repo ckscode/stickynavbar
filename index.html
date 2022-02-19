@@ -20,15 +20,16 @@
         top: 0;
         width: 100%;
         transition: 0.3s;
+        background-color: rgba(0, 0, 255, 0.582);
       }
-      .navbg {
-        background-color: blue;
+      .none {
+        display: none;
       }
     </style>
   </head>
   <body>
     <section class="bg-dark pt-5">
-      <navbar id="nav" class="navbar navbar-expand-lg navbar-dark">
+      <navbar id="nav" class="navbar d-none navbar-expand-lg navbar-dark">
         <div class="container">
           <a href="" class="navbar-brand">NAVBAR</a>
           <button
@@ -137,13 +138,16 @@
 
     <script>
       navbar = document.querySelector('#nav');
+
       window.addEventListener('scroll', () => {
         if (window.scrollY > 0) {
-          navbar.classList.add('navbg', 'navbar-light');
+          navbar.classList.add('navbar');
+          navbar.classList.remove('d-none');
         } else {
-          navbar.classList.remove('navbg');
+          navbar.classList.add('d-none');
         }
       });
     </script>
   </body>
 </html>
+
